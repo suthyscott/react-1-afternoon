@@ -21,13 +21,14 @@ class FilterObject extends Component {
                 title: 'CEO',
               }
             ],
+
             userInput: "",
             filteredEmployees: []
         }
     }
 
     handleChange(val){
-        this.setState({ userInput: val})
+        this.setState({ userInput: val })
     }
 
     filterEmployees(prop){
@@ -43,7 +44,7 @@ class FilterObject extends Component {
         this.setState({ filteredEmployees: filteredEmployees })
     }
 
-    render (){
+    render(){
         return (
             <div className='puzzleBox filterObjectPB'>
                 <h4> Filter Object </h4>
@@ -52,7 +53,7 @@ class FilterObject extends Component {
                 <input className="inputLine" onChange={ (e) => 
                 this.handleChange(e.target.value) }></input>
                 <button className="confirmationButton" onClick={ () => 
-                this.filterEmployees(this.state.userInput)}> Filter </button>
+                this.filterEmployees(this.state.userInput) }> Filter </button>
                 <span className="resultsBox filterObjectRB"> FIltered: {
                     JSON.stringify(this.state.filteredEmployees, null, 10) }</span>
             </div>
